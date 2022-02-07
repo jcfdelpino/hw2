@@ -72,9 +72,12 @@
 
 # Generate models and tables, according to the domain model
 # TODO!
-Movie.count.all
 
-
+# STUDENT NOTE - I am unaware of why the code I used to generate models and tables did not work here but did in the terminal. I have copied what I used below.
+rails generate model Movie released:integer rating:string 
+rails generate model People  name:string
+rails generate model Role  movieid:integer personid:integer character:string
+rails db:migrate
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
