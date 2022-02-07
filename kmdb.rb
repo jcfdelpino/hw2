@@ -69,6 +69,9 @@
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
 # TODO!
+Movie.destroy_all
+Person.destroy_all
+Role.destroy_all
 
 # Generate models and tables, according to the domain model
 # TODO!
@@ -83,27 +86,165 @@
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
-new_movie1=Movie.new
-new_movie1.title="Batman Begins"
-new_movie1.released="2005"
-new_movie1.rating="PG-13"
-new_movie1.director="Christopher Nolan"
-new_movie1.save
+movie1 = Movie.new
+movie1.title = "Batman Begins"
+movie1.year_released = "2005"
+movie1.rated = "PG-13"
+movie1.person_id = "1"
+movie1.save
 
-new_movie2=Movie.new
-new_movie2.title="The Dark Knight"
-new_movie2.released="2008"
-new_movie2.rating="PG-13"
-new_movie2.director="Christopher Nolan"
-new_movie2.save
+movie2 = Movie.new
+movie2.title = "The Dark Knight"
+movie2.year_released = "2008"
+movie2.rated = "PG-13"
+movie2.person_id = "Christopher Nolan"
+movie2.save
 
-new_movie3=Movie.new
-new_movie3.title="The Dark Knight Rises"
-new_movie3.released="2012"
-new_movie3.rating="PG-13"
-new_movie3.director="Christopher Nolan"
+movie3 = Movie.new
+movie3.title = "The Dark Knight Rises"
+movie3.year_released = "2012"
+movie3.rated = "PG-13"
+movie3.person_id = "Christopher Nolan"
+movie3.save
 
-puts new_movie3.inspect
+person1 = Person.new
+person1.name = "Christopher Nolan"
+person1.save
+
+person2 = Person.new
+person2.name = "Christian Bale"
+person2.save
+
+person3 = Person.new
+person3.name = "Michael Caine"
+person3.save
+
+person4 = Person.new
+person4.name = "Liam Neeson"
+person4.save
+
+person5 = Person.new
+person5.name = "Katie Holmes"
+person5.save
+
+person6 = Person.new
+person6.name = "Gary Oldman"
+person6.save
+
+person7 = Person.new
+person7.name = "Heath Ledger"
+person7.save
+
+person8 = Person.new
+person8.name = "Aaron Eckhart"
+person8.save
+
+person9 = Person.new
+person9.name = "Maggie Gyllenhaal"
+person9.save
+
+person10 = Person.new
+person10.name = "Tom Hardy"
+person10.save
+
+person11 = Person.new
+person11.name = "Joseph Gordon-Levitt"
+person11.save
+
+person12 = Person.new
+person12.name = "Anne Hathaway"
+person12.save
+
+role1 = Role.new
+role1.movieid = 1
+role1.personid = 2
+role1.character = "Bruce Wayne"
+role1.save
+
+role2 = Role.new
+role2.movieid = 1
+role2.personid = 3
+role2.character = "Alfred"
+role2.save
+
+role3 = Role.new
+role3.movieid = 1
+role3.personid = 4
+role3.character = "Ra's Al Ghul"
+role3.save
+
+role4 = Role.new
+role4.movieid = 1
+role4.personid = 5
+role4.character = "Rachel Dawes"
+role4.save
+
+role5 = Role.new
+role5.movieid = 1
+role5.personid = 6
+role5.character = "Commissioner Gordon"
+role5.save
+
+role6 = Role.new
+role6.movieid = 2
+role6.personid = 2
+role6.character = "Bruce Wayne"
+role6.save
+
+role7 = Role.new
+role7.movieid = 2
+role7.personid = 7
+role7.character = "Joker"
+role7.save
+
+role8 = Role.new
+role8.movieid = 2
+role8.personid = 8
+role8.character = "Harvey Dent"
+role8.save
+
+role9 = Role.new
+role9.movieid = 2
+role9.personid = 3
+role9.character = "Alfred"
+role9.save
+
+role10 = Role.new
+role10.movieid = 2
+role10.personid = 9
+role10.character = "Rachel Dawes"
+role10.save
+
+role11 = Role.new
+role11.movieid = 3
+role11.personid = 2
+role11.character = "Bruce Wayne"
+role11.save
+
+role12 = Role.new
+role12.movieid = 3
+role12.personid = 5
+role12.character = "Commissioner Gordon"
+role12.save
+
+role13 = Role.new
+role13.movieid = 3
+role13.personid = 9
+role13.character = "Bane"
+role13.save
+
+role14 = Role.new
+role14.movieid = 3
+role14.personid = 10
+role14.character = "John Blake"
+role14.save
+
+role15 = Role.new
+role15.movieid = 3
+role15.personid = 11
+role15.character = "Selina Kyle"
+role15.save
+
 
 # Prints a header for the movies output
 puts "Movies"
