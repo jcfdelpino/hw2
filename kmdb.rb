@@ -70,10 +70,9 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
-# Generate models and tables, according to the domain mo del
+# Generate models and tables, according to the domain model
 # TODO!
-rails generate model Movie id:integer title:string released:integer rating:string person_id:integer
-
+Movie.count.all
 
 
 
