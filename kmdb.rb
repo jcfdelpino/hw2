@@ -70,14 +70,9 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
-# Generate models and tables, according to the domain model
+# Generate models and tables, according to the domain mo del
 # TODO!
- batman_begins = Movie.new
- id = "1"
- title = "Batman Begins" 
- year_released = "2005"
- rating = "PG-13"
- puts batman_begins.inspect
+rails generate model Movie id:integer title:string released:integer rating:string person_id:integer
 
 
 
