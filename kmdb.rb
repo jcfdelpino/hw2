@@ -74,14 +74,36 @@
 # TODO!
 
 # STUDENT NOTE - I am unaware of why the code I used to generate models and tables did not work here but did in the terminal. I have copied what I used below.
-rails generate model Movie released:integer rating:string 
-rails generate model People  name:string
-rails generate model Role  movieid:integer personid:integer character:string
-rails db:migrate
+#rails generate model Movie released:integer rating:string 
+#rails generate model People  name:string
+#rails generate model Role  movieid:integer personid:integer character:string
+#rails db:migrate
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+new_movie1=Movie.new
+new_movie1.title="Batman Begins"
+new_movie1.released="2005"
+new_movie1.rating="PG-13"
+new_movie1.director="Christopher Nolan"
+new_movie1.save
+
+new_movie2=Movie.new
+new_movie2.title="The Dark Knight"
+new_movie2.released="2008"
+new_movie2.rating="PG-13"
+new_movie2.director="Christopher Nolan"
+new_movie2.save
+
+new_movie3=Movie.new
+new_movie3.title="The Dark Knight Rises"
+new_movie3.released="2012"
+new_movie3.rating="PG-13"
+new_movie3.director="Christopher Nolan"
+
+puts new_movie3.inspect
 
 # Prints a header for the movies output
 puts "Movies"
