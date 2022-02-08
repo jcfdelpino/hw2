@@ -79,8 +79,8 @@ Role.destroy_all
 
 # STUDENT NOTE - I am unaware of why the code I used to generate models and tables did not work here but did in the terminal. I have copied what I used below for your review.
 #rails generate model Movie title :string year_released:string rated:string person_id :string 
-#rails generate model People  name:string
-#rails generate model Role  movieid:integer personid:integer character:string
+#rails generate model People name:string
+#rails generate model Role movieid:integer personid:integer character:string
 #rails db:migrate
 
 
