@@ -257,19 +257,19 @@ puts ""
 # Query the movies data and loop through the results to display the movies output
 # TODO!
 
-#puts "#{movie1.title} #{movie1.year_released} #{movie1.rated} #{movie1.person_id}"
-#puts "#{movie2.title} #{movie2.year_released} #{movie2.rated} #{movie2.person_id}"
-#puts "#{movie3.title} #{movie3.year_released} #{movie3.rated} #{movie3.person_id}"
 
 #puts Movie.all.count
 #puts Person.all.count
 #puts Role.all.count
 
-#newvar = Movie.all
+movies = Movie.all
+for movie in movies
+    puts "#{movie.title} - #{movie.year_released} - #{movie.rating} - #{movie.person_id}"
+end
+
+
 
 #p newvar.read_attribute(:title)
-
-
 
 
 # Prints a header for the cast output
