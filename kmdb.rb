@@ -91,21 +91,21 @@ Role.destroy_all
 movie = Movie.new
 movie.title = "Batman Begins"
 movie.year_released = "2005"
-movie.rated = "PG-13"
+movie.rating = "PG-13"
 movie.person_id =  "Christopher Nolan"
 movie.save
 
 movie = Movie.new
 movie.title = "The Dark Knight"
 movie.year_released= "2008"
-movie.rated = "PG-13"
+movie.rating = "PG-13"
 movie.person_id =  "Christopher Nolan"
 movie.save
 
 movie = Movie.new
 movie.title = "The Dark Knight Rises"
 movie.year_released = "2012"
-movie.rated = "PG-13"
+movie.rating = "PG-13"
 movie.person_id =  "Christopher Nolan"
 movie.save
 
@@ -159,93 +159,93 @@ person.save
 
 
 role = Role.new
-role.movieid = "Batman Begins"
-role.personid =  "Christian Bale"
-role.character = "Bruce Wayne"
+role.movie_id = "Batman Begins"
+role.person_id =  "Christian Bale"
+role.character_name = "Bruce Wayne"
 role.save
 
 role = Role.new
-role.movieid = "Batman Begins"
-role.personid =  "Michael Caine"
-role.character = "Alfred"
+role.movie_id = "Batman Begins"
+role.person_id =  "Michael Caine"
+role.character_name = "Alfred"
 role.save
 
 role = Role.new
-role.movieid = "Batman Begins"
-role.personid =  "Liam Neeson"
-role.character = "Ra's Al Ghul"
+role.movie_id = "Batman Begins"
+role.person_id =  "Liam Neeson"
+role.character_name = "Ra's Al Ghul"
 role.save
 
 role = Role.new
-role.movieid = "Batman Begins"
-role.personid =  "Katie Holmes"
-role.character = "Rachel Dawes"
+role.movie_id = "Batman Begins"
+role.person_id =  "Katie Holmes"
+role.character_name = "Rachel Dawes"
 role.save
 
 role = Role.new
-role.movieid = "Batman Begins"
-role.personid =  "Gary Oldman"
-role.character = "Commissioner Gordon"
+role.movie_id = "Batman Begins"
+role.person_id =  "Gary Oldman"
+role.character_name = "Commissioner Gordon"
 role.save
 
 role = Role.new
-role.movieid = "The Dark Knight"
-role.personid =  "Christopher Nolan"
-role.character = "Bruce Wayne"
+role.movie_id = "The Dark Knight"
+role.person_id =  "Christopher Nolan"
+role.character_name = "Bruce Wayne"
 role.save
 
 role = Role.new
-role.movieid = "The Dark Knight"
-role.personid =  "Heath Ledger"
-role.character = "Joker"
+role.movie_id = "The Dark Knight"
+role.person_id =  "Heath Ledger"
+role.character_name = "Joker"
 role.save
 
 role = Role.new
-role.movieid = "The Dark Knight"
-role.personid = "Aaron Eckhart"
-role.character = "Harvey Dent"
+role.movie_id = "The Dark Knight"
+role.person_id = "Aaron Eckhart"
+role.character_name = "Harvey Dent"
 role.save
 
 role = Role.new
-role.movieid = "The Dark Knight"
-role.personid = "Michael Caine"
-role.character = "Alfred"
+role.movie_id = "The Dark Knight"
+role.person_id = "Michael Caine"
+role.character_name = "Alfred"
 role.save
 
 role = Role.new
-role.movieid = "The Dark Knight"
-role.personid = "Maggie Gyllenhaal"
-role.character = "Rachel Dawes"
+role.movie_id = "The Dark Knight"
+role.person_id = "Maggie Gyllenhaal"
+role.character_name = "Rachel Dawes"
 role.save
 
 role = Role.new
-role.movieid = "The Dark Knight Rises"
-role.personid = "Christopher Nolan"
-role.character = "Bruce Wayne"
+role.movie_id = "The Dark Knight Rises"
+role.person_id = "Christopher Nolan"
+role.character_name = "Bruce Wayne"
 role.save
 
 role = Role.new
-role.movieid = "The Dark Knight Rises"
-role.personid = "Gary Oldman"
-role.character = "Commissioner Gordon"
+role.movie_id = "The Dark Knight Rises"
+role.person_id = "Gary Oldman"
+role.character_name = "Commissioner Gordon"
 role.save
 
 role = Role.new
-role.movieid = "The Dark Knight Rises"
-role.personid = "Tom Hardy"
-role.character = "Bane"
+role.movie_id = "The Dark Knight Rises"
+role.person_id = "Tom Hardy"
+role.character_name = "Bane"
 role.save
 
 role = Role.new
-role.movieid = "The Dark Knight Rises"
-role.personid = "Joseph Gordon-Levitt"
-role.character = "John Blake"
+role.movie_id = "The Dark Knight Rises"
+role.person_id = "Joseph Gordon-Levitt"
+role.character_name = "John Blake"
 role.save
 
 role = Role.new
-role.movieid = "The Dark Knight Rises"
-role.personid = "Anne Hathaway"
-role.character = "Selina Kyle"
+role.movie_id = "The Dark Knight Rises"
+role.person_id = "Anne Hathaway"
+role.character_name = "Selina Kyle"
 role.save
 
 
@@ -265,9 +265,9 @@ puts ""
 #puts Person.all.count
 #puts Role.all.count
 
-newvar = Movie.all
+#newvar = Movie.all
 
-p newvar.read_attribute(:title)
+#p newvar.read_attribute(:title)
 
 
 
