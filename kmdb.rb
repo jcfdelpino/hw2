@@ -258,21 +258,11 @@ puts ""
 # TODO!
 
 
-#puts Movie.all.count
-#puts Person.all.count
-#puts Role.all.count
-
 movies = Movie.all
 for movie in movies
     puts "#{movie.title} - #{movie.year_released} - #{movie.rating} - #{movie.person_id}"
 end
 
-
-
-#p newvar.read_attribute(:title)
-
-
-# Prints a header for the cast output
 puts ""
 puts "Top Cast"
 puts "========"
@@ -281,18 +271,7 @@ puts ""
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
 
-#puts "#{role1.movieid} #{role1.personid} #{role1.character}"
-#puts "#{role2.movieid} #{role2.personid} #{role2.character}"
-#puts "#{role3.movieid} #{role3.personid} #{role3.character}"
-#puts "#{role4.movieid} #{role4.personid} #{role4.character}"
-#puts "#{role5.movieid} #{role5.personid} #{role5.character}"
-#puts "#{role6.movieid} #{role6.personid} #{role6.character}"
-#puts "#{role7.movieid} #{role7.personid} #{role7.character}"
-#puts "#{role8.movieid} #{role8.personid} #{role8.character}"
-#puts "#{role9.movieid} #{role9.personid} #{role9.character}"
-#puts "#{role10.movieid} #{role10.personid} #{role10.character}"
-#puts "#{role11.movieid} #{role11.personid} #{role11.character}"
-#puts "#{role12.movieid} #{role12.personid} #{role12.character}"
-#puts "#{role13.movieid} #{role13.personid} #{role13.character}"
-#puts "#{role14.movieid} #{role14.personid} #{role14.character}"
-#puts "#{role15.movieid} #{role15.personid} #{role15.character}"
+roles = Role.all
+for role in roles
+    puts "#{role.movie_id} - #{role.person_id} - #{role.character_name}"
+end
