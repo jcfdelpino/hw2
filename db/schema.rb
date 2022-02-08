@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_02_07_025434) do
     t.string "title"
     t.string "year_released"
     t.string "rated"
-    t.integer "person_id"
+    t.string "person_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 2022_02_07_025434) do
   end
 
   create_table "roles", force: :cascade do |t|
-    t.integer "movieid"
-    t.integer "personid"
+    t.string "movieid"
+    t.string "personid"
     t.string "character"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
