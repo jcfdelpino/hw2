@@ -5,8 +5,6 @@ class CreateMovies < ActiveRecord::Migration[7.0]
       t.string :year_released
       t.string :rated
       t.string :person_id
-
-      t.timestamps
     end
   end
 end

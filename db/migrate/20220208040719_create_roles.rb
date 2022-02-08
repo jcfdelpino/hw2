@@ -4,8 +4,6 @@ class CreateRoles < ActiveRecord::Migration[7.0]
       t.string :movieid
       t.string :personid
       t.string :character
-
-      t.timestamps
     end
   end
 end
