@@ -259,6 +259,8 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output
 # TODO!
+movie_title =  movie.title
+puts movie.title
 
 
 # Movies COPIED FOR REFERENCE
