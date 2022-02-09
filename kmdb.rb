@@ -88,27 +88,6 @@ Role.destroy_all
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
-movie = Movie.new
-movie.title = "Batman Begins"
-movie.year_released = "2005"
-movie.rating = "PG-13"
-movie.person_id =  "Christopher Nolan"
-movie.save
-
-movie = Movie.new
-movie.title = "The Dark Knight"
-movie.year_released= "2008"
-movie.rating = "PG-13"
-movie.person_id =  "Christopher Nolan"
-movie.save
-
-movie = Movie.new
-movie.title = "The Dark Knight Rises"
-movie.year_released = "2012"
-movie.rating = "PG-13"
-movie.person_id =  "Christopher Nolan"
-movie.save
-
 person = Person.new
 person.name = "Christopher Nolan"
 person.save
@@ -157,94 +136,134 @@ person = Person.new
 person.name = "Anne Hathaway"
 person.save
 
+director = Person.where({name:"Christopher Nolan"})[0]
+
+movie = Movie.new
+movie.title = "Batman Begins"
+movie.year_released = "2005"
+movie.rating = "PG-13"
+movie.person_id = director.name
+movie.save
+
+movie = Movie.new
+movie.title = "The Dark Knight"
+movie.year_released= "2008"
+movie.rating = "PG-13"
+movie.person_id =  director.name
+movie.save
+
+movie = Movie.new
+movie.title = "The Dark Knight Rises"
+movie.year_released = "2012"
+movie.rating = "PG-13"
+movie.person_id =  director.name
+movie.save
+
+#Roles 
+
+begins = Movie.where({title: "Batman Begins"})[0]
+dark_knight = Movie.where({title: "The Dark Knight"})[0] 
+rises = Movie.where({title: "The Dark Knight Rises"})[0]
+christian = Person.where({name: "Christian Bale"})[0]
+michael = Person.where({name: "Michael Caine"})[0]
+liam = Person.where({name: "Liam Neeson"})[0]
+katie = Person.where({name: "Katie Holmes"})[0]
+gary = Person.where({name: "Gary Oldman"})[0]
+heath = Person.where({name: "Heath Ledger"})[0]
+aaron = Person.where({name: "Aaron Eckhart"})[0]
+maggie = Person.where({name: "Maggie Gyllenhaal"})[0]
+tom = Person.where({name: "Tom Hardy"})[0]
+joe = Person.where({name: "Joseph Gordon-Levitt"})[0]
+anne = Person.where({name: "Anne Hathaway"})[0]
+
 
 role = Role.new
-role.movie_id = "Batman Begins"
-role.person_id =  "Christian Bale"
+role.movie_id = begins.title
+role.person_id =  christian.name
 role.character_name = "Bruce Wayne"
 role.save
 
 role = Role.new
-role.movie_id = "Batman Begins"
-role.person_id =  "Michael Caine"
+role.movie_id = begins.title
+role.person_id =  michael.name
 role.character_name = "Alfred"
 role.save
 
 role = Role.new
-role.movie_id = "Batman Begins"
-role.person_id =  "Liam Neeson"
+role.movie_id = begins.title
+role.person_id =  liam.name
 role.character_name = "Ra's Al Ghul"
 role.save
 
 role = Role.new
-role.movie_id = "Batman Begins"
-role.person_id =  "Katie Holmes"
+role.movie_id = begins.title
+role.person_id =  katie.name
 role.character_name = "Rachel Dawes"
 role.save
 
 role = Role.new
-role.movie_id = "Batman Begins"
-role.person_id =  "Gary Oldman"
+role.movie_id = begins.title
+role.person_id =  gary.name
 role.character_name = "Commissioner Gordon"
 role.save
 
 role = Role.new
-role.movie_id = "The Dark Knight"
-role.person_id =  "Christopher Nolan"
+role.movie_id = dark_knight.title
+role.person_id =  christian.name
 role.character_name = "Bruce Wayne"
 role.save
 
 role = Role.new
-role.movie_id = "The Dark Knight"
-role.person_id =  "Heath Ledger"
+role.movie_id = dark_knight.title
+role.person_id =  heath.name
 role.character_name = "Joker"
 role.save
 
 role = Role.new
-role.movie_id = "The Dark Knight"
-role.person_id = "Aaron Eckhart"
+role.movie_id = dark_knight.title
+role.person_id = aaron.name
 role.character_name = "Harvey Dent"
 role.save
 
 role = Role.new
-role.movie_id = "The Dark Knight"
-role.person_id = "Michael Caine"
+role.movie_id = dark_knight.title
+role.person_id = michael.name
 role.character_name = "Alfred"
 role.save
 
 role = Role.new
-role.movie_id = "The Dark Knight"
-role.person_id = "Maggie Gyllenhaal"
+role.movie_id = dark_knight.title
+role.person_id = maggie.name
 role.character_name = "Rachel Dawes"
 role.save
 
 role = Role.new
-role.movie_id = "The Dark Knight Rises"
-role.person_id = "Christopher Nolan"
+role.movie_id = rises.title
+role.person_id = christian.name
 role.character_name = "Bruce Wayne"
 role.save
 
 role = Role.new
-role.movie_id = "The Dark Knight Rises"
-role.person_id = "Gary Oldman"
+role.movie_id = rises.title
+role.person_id = gary.name
 role.character_name = "Commissioner Gordon"
 role.save
 
 role = Role.new
-role.movie_id = "The Dark Knight Rises"
-role.person_id = "Tom Hardy"
+role.movie_id = rises.title
+role.person_id = tom.name
 role.character_name = "Bane"
 role.save
 
 role = Role.new
-role.movie_id = "The Dark Knight Rises"
-role.person_id = "Joseph Gordon-Levitt"
+role.movie_id = rises.title
+role.person_id = joe.name
 role.character_name = "John Blake"
 role.save
 
 role = Role.new
-role.movie_id = "The Dark Knight Rises"
-role.person_id = "Anne Hathaway"
+role.movie_id = rises.title
+role.person_id = anne.name
 role.character_name = "Selina Kyle"
 role.save
 
@@ -256,7 +275,6 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output
 # TODO!
-
 
 movies = Movie.all
 for movie in movies
@@ -275,3 +293,5 @@ roles = Role.all
 for role in roles
     puts "#{role.movie_id} - #{role.person_id} - #{role.character_name}"
 end
+
+
