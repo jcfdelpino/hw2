@@ -79,35 +79,14 @@ Role.destroy_all
 
 # STUDENT NOTE - I am unaware of why the code I used to generate models and tables did not work here but did in the terminal. I have copied what I used below for your review.
 #rails generate model Movie title :string year_released:string rated:string person_id :string 
-#rails generate model People  name:string
-#rails generate model Role  movieid:integer personid:integer character:string
+#rails generate model People name:string
+#rails generate model Role movieid:integer personid:integer character:string
 #rails db:migrate
 
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
 # TODO!
-
-movie1 = Movie.new
-movie1.title = "Batman Begins"
-movie1.year_released = "2005"
-movie1.rated = "PG-13"
-movie1.person_id =  "Christopher Nolan"
-movie1.save
-
-movie2 = Movie.new
-movie2.title = "The Dark Knight"
-movie2.year_released= "2008"
-movie2.rated = "PG-13"
-movie2.person_id =  "Christopher Nolan"
-movie2.save
-
-movie3 = Movie.new
-movie3.title = "The Dark Knight Rises"
-movie3.year_released = "2012"
-movie3.rated = "PG-13"
-movie3.person_id =  "Christopher Nolan"
-movie3.save
 
 person = Person.new
 person.name = "Christopher Nolan"
@@ -157,96 +136,136 @@ person = Person.new
 person.name = "Anne Hathaway"
 person.save
 
+director = Person.where({name:"Christopher Nolan"})[0]
 
-role1 = Role.new
-role1.movieid = "Batman Begins"
-role1.personid =  "Christian Bale"
-role1.character = "Bruce Wayne"
-role1.save
+movie = Movie.new
+movie.title = "Batman Begins"
+movie.year_released = "2005"
+movie.rating = "PG-13"
+movie.person_id = director.name
+movie.save
 
-role2 = Role.new
-role2.movieid = "Batman Begins"
-role2.personid =  "Michael Caine"
-role2.character = "Alfred"
-role2.save
+movie = Movie.new
+movie.title = "The Dark Knight"
+movie.year_released= "2008"
+movie.rating = "PG-13"
+movie.person_id =  director.name
+movie.save
 
-role3 = Role.new
-role3.movieid = "Batman Begins"
-role3.personid =  "Liam Neeson"
-role3.character = "Ra's Al Ghul"
-role3.save
+movie = Movie.new
+movie.title = "The Dark Knight Rises"
+movie.year_released = "2012"
+movie.rating = "PG-13"
+movie.person_id =  director.name
+movie.save
 
-role4 = Role.new
-role4.movieid = "Batman Begins"
-role4.personid =  "Katie Holmes"
-role4.character = "Rachel Dawes"
-role4.save
+#Roles 
 
-role5 = Role.new
-role5.movieid = "Batman Begins"
-role5.personid =  "Gary Oldman"
-role5.character = "Commissioner Gordon"
-role5.save
+begins = Movie.where({title: "Batman Begins"})[0]
+dark_knight = Movie.where({title: "The Dark Knight"})[0] 
+rises = Movie.where({title: "The Dark Knight Rises"})[0]
+christian = Person.where({name: "Christian Bale"})[0]
+michael = Person.where({name: "Michael Caine"})[0]
+liam = Person.where({name: "Liam Neeson"})[0]
+katie = Person.where({name: "Katie Holmes"})[0]
+gary = Person.where({name: "Gary Oldman"})[0]
+heath = Person.where({name: "Heath Ledger"})[0]
+aaron = Person.where({name: "Aaron Eckhart"})[0]
+maggie = Person.where({name: "Maggie Gyllenhaal"})[0]
+tom = Person.where({name: "Tom Hardy"})[0]
+joe = Person.where({name: "Joseph Gordon-Levitt"})[0]
+anne = Person.where({name: "Anne Hathaway"})[0]
 
-role6 = Role.new
-role6.movieid = "The Dark Knight"
-role6.personid =  "Christopher Nolan"
-role6.character = "Bruce Wayne"
-role6.save
 
-role7 = Role.new
-role7.movieid = "The Dark Knight"
-role7.personid =  "Heath Ledger"
-role7.character = "Joker"
-role7.save
+role = Role.new
+role.movie_id = begins.title
+role.person_id =  christian.name
+role.character_name = "Bruce Wayne"
+role.save
 
-role8 = Role.new
-role8.movieid = "The Dark Knight"
-role8.personid = "Aaron Eckhart"
-role8.character = "Harvey Dent"
-role8.save
+role = Role.new
+role.movie_id = begins.title
+role.person_id =  michael.name
+role.character_name = "Alfred"
+role.save
 
-role9 = Role.new
-role9.movieid = "The Dark Knight"
-role9.personid = "Michael Caine"
-role9.character = "Alfred"
-role9.save
+role = Role.new
+role.movie_id = begins.title
+role.person_id =  liam.name
+role.character_name = "Ra's Al Ghul"
+role.save
 
-role10 = Role.new
-role10.movieid = "The Dark Knight"
-role10.personid = "Maggie Gyllenhaal"
-role10.character = "Rachel Dawes"
-role10.save
+role = Role.new
+role.movie_id = begins.title
+role.person_id =  katie.name
+role.character_name = "Rachel Dawes"
+role.save
 
-role11 = Role.new
-role11.movieid = "The Dark Knight Rises"
-role11.personid = "Christopher Nolan"
-role11.character = "Bruce Wayne"
-role11.save
+role = Role.new
+role.movie_id = begins.title
+role.person_id =  gary.name
+role.character_name = "Commissioner Gordon"
+role.save
 
-role12 = Role.new
-role12.movieid = "The Dark Knight Rises"
-role12.personid = "Gary Oldman"
-role12.character = "Commissioner Gordon"
-role12.save
+role = Role.new
+role.movie_id = dark_knight.title
+role.person_id =  christian.name
+role.character_name = "Bruce Wayne"
+role.save
 
-role13 = Role.new
-role13.movieid = "The Dark Knight Rises"
-role13.personid = "Tom Hardy"
-role13.character = "Bane"
-role13.save
+role = Role.new
+role.movie_id = dark_knight.title
+role.person_id =  heath.name
+role.character_name = "Joker"
+role.save
 
-role14 = Role.new
-role14.movieid = "The Dark Knight Rises"
-role14.personid = "Joseph Gordon-Levitt"
-role14.character = "John Blake"
-role14.save
+role = Role.new
+role.movie_id = dark_knight.title
+role.person_id = aaron.name
+role.character_name = "Harvey Dent"
+role.save
 
-role15 = Role.new
-role15.movieid = "The Dark Knight Rises"
-role15.personid = "Anne Hathaway"
-role15.character = "Selina Kyle"
-role15.save
+role = Role.new
+role.movie_id = dark_knight.title
+role.person_id = michael.name
+role.character_name = "Alfred"
+role.save
+
+role = Role.new
+role.movie_id = dark_knight.title
+role.person_id = maggie.name
+role.character_name = "Rachel Dawes"
+role.save
+
+role = Role.new
+role.movie_id = rises.title
+role.person_id = christian.name
+role.character_name = "Bruce Wayne"
+role.save
+
+role = Role.new
+role.movie_id = rises.title
+role.person_id = gary.name
+role.character_name = "Commissioner Gordon"
+role.save
+
+role = Role.new
+role.movie_id = rises.title
+role.person_id = tom.name
+role.character_name = "Bane"
+role.save
+
+role = Role.new
+role.movie_id = rises.title
+role.person_id = joe.name
+role.character_name = "John Blake"
+role.save
+
+role = Role.new
+role.movie_id = rises.title
+role.person_id = anne.name
+role.character_name = "Selina Kyle"
+role.save
 
 
 # Prints a header for the movies output
@@ -257,12 +276,11 @@ puts ""
 # Query the movies data and loop through the results to display the movies output
 # TODO!
 
-puts "#{movie1.title} #{movie1.year_released} #{movie1.rated} #{movie1.person_id}"
-puts "#{movie2.title} #{movie2.year_released} #{movie2.rated} #{movie2.person_id}"
-puts "#{movie3.title} #{movie3.year_released} #{movie3.rated} #{movie3.person_id}"
+movies = Movie.all
+for movie in movies
+    puts "#{movie.title} - #{movie.year_released} - #{movie.rating} - #{movie.person_id}"
+end
 
-
-# Prints a header for the cast output
 puts ""
 puts "Top Cast"
 puts "========"
@@ -271,18 +289,9 @@ puts ""
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
 
-puts "#{role1.movieid} #{role1.personid} #{role1.character}"
-puts "#{role2.movieid} #{role2.personid} #{role2.character}"
-puts "#{role3.movieid} #{role3.personid} #{role3.character}"
-puts "#{role4.movieid} #{role4.personid} #{role4.character}"
-puts "#{role5.movieid} #{role5.personid} #{role5.character}"
-puts "#{role6.movieid} #{role6.personid} #{role6.character}"
-puts "#{role7.movieid} #{role7.personid} #{role7.character}"
-puts "#{role8.movieid} #{role8.personid} #{role8.character}"
-puts "#{role9.movieid} #{role9.personid} #{role9.character}"
-puts "#{role10.movieid} #{role10.personid} #{role10.character}"
-puts "#{role11.movieid} #{role11.personid} #{role11.character}"
-puts "#{role12.movieid} #{role12.personid} #{role12.character}"
-puts "#{role13.movieid} #{role13.personid} #{role13.character}"
-puts "#{role14.movieid} #{role14.personid} #{role14.character}"
-puts "#{role15.movieid} #{role15.personid} #{role15.character}"
+roles = Role.all
+for role in roles
+    puts "#{role.movie_id} - #{role.person_id} - #{role.character_name}"
+end
+
+
